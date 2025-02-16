@@ -8,14 +8,14 @@
   <style>
     :root {
       --background: #000;
-      --card-bg: rgba(17, 17, 17, 0.9);
+      --card-bg: rgba(17, 17, 17, 0.95);
       --text-primary: #fff;
       --text-secondary: rgba(255, 255, 255, 0.7);
       --accent-purple: #7928CA;
       --accent-blue: #0070F3;
       --accent-cyan: #50E3C2;
-      --card-border: rgba(255, 255, 255, 0.1);
-      --card-hover: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.15);
+      --card-hover: rgba(255, 255, 255, 0.08);
       --transition-timing: 0.2s ease;
     }
 
@@ -38,11 +38,13 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--background);
       color: var(--text-primary);
-      min-height: 100vh;
+      height: 100vh;
       line-height: 1.6;
-      overflow-x: hidden;
+      overflow: hidden;
+      position: relative;
     }
 
+    /* Enhanced background grid */
     body::before {
       content: "";
       position: fixed;
@@ -50,37 +52,48 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at center, rgba(121, 40, 202, 0.15), transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(0, 112, 243, 0.15), transparent 30%);
+      background: 
+        linear-gradient(to right, transparent 99%, rgba(255, 255, 255, 0.1) 1%) 0 0 / 50px 50px,
+        linear-gradient(to bottom, transparent 99%, rgba(255, 255, 255, 0.1) 1%) 0 0 / 50px 50px,
+        radial-gradient(circle at center, rgba(121, 40, 202, 0.2), transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(0, 112, 243, 0.2), transparent 40%);
       pointer-events: none;
       z-index: -1;
     }
 
+    main {
+      height: 100vh;
+      overflow: hidden;
+    }
+
     .grid-container {
-      max-width: 1400px;
-      margin: 2rem auto;
-      padding: 1rem;
+      height: 100vh;
+      max-width: 95vw;
+      margin: 0 auto;
+      padding: 2vh 1vw;
       display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
     }
 
     @media (min-width: 768px) {
       .grid-container {
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(6, minmax(120px, auto));
+        grid-template-rows: repeat(6, 1fr);
       }
     }
 
     .grid {
       background: var(--card-bg);
       border-radius: 1rem;
-      padding: 2rem;
+      padding: 1.5rem;
       position: relative;
       overflow: hidden;
       backdrop-filter: blur(10px);
       border: 1px solid var(--card-border);
       transition: all var(--transition-timing);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .grid::before {
@@ -89,7 +102,7 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 1px;
+      height: 2px;
       background: linear-gradient(90deg, 
         transparent, 
         var(--accent-purple), 
@@ -113,6 +126,9 @@
     .grid img {
       max-width: 100%;
       height: auto;
+      object-fit: contain;
+      max-height: 60%;
+      margin: auto 0;
       transition: transform var(--transition-timing);
     }
 
@@ -133,13 +149,14 @@
     }
 
     h1 {
-      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-size: clamp(1.25rem, 1.5vw, 2rem);
       font-weight: 700;
       background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
     }
 
     .yellow {
@@ -155,32 +172,57 @@
 
     p {
       color: var(--text-secondary);
-      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      font-size: clamp(0.875rem, 1vw, 1rem);
+      margin-top: auto;
     }
 
     .stat {
-      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-size: clamp(1.75rem, 2.5vw, 3rem);
       font-weight: 800;
       background: linear-gradient(45deg, var(--accent-purple), var(--accent-blue));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      display: block;
+      margin-bottom: 0.5rem;
     }
 
     @media (max-width: 767px) {
+      body {
+        overflow-y: auto;
+      }
+      
+      main {
+        height: auto;
+        overflow: visible;
+      }
+      
+      .grid-container {
+        height: auto;
+        grid-template-columns: 1fr;
+      }
+      
       .grid {
-        min-height: 250px;
+        min-height: 200px;
       }
     }
 
     @media (prefers-color-scheme: light) {
       :root {
         --background: #fafafa;
-        --card-bg: rgba(255, 255, 255, 0.9);
+        --card-bg: rgba(255, 255, 255, 0.95);
         --text-primary: #000;
         --text-secondary: rgba(0, 0, 0, 0.7);
-        --card-border: rgba(0, 0, 0, 0.1);
-        --card-hover: rgba(0, 0, 0, 0.02);
+        --card-border: rgba(0, 0, 0, 0.15);
+        --card-hover: rgba(0, 0, 0, 0.05);
+      }
+
+      body::before {
+        background: 
+          linear-gradient(to right, transparent 99%, rgba(0, 0, 0, 0.1) 1%) 0 0 / 50px 50px,
+          linear-gradient(to bottom, transparent 99%, rgba(0, 0, 0, 0.1) 1%) 0 0 / 50px 50px,
+          radial-gradient(circle at center, rgba(121, 40, 202, 0.1), transparent 60%),
+          radial-gradient(circle at 80% 20%, rgba(0, 112, 243, 0.1), transparent 40%);
       }
     }
   </style>
