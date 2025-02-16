@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vercel-Inspired Bento Grid</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/inter/3.19.3/inter.css" rel="stylesheet">
+  <style>
+    :root {
+      --background: #000;
+      --card-bg: rgba(17, 17, 17, 0.9);
+      --text-primary: #fff;
+      --text-secondary: rgba(255, 255, 255, 0.7);
+      --accent-purple: #7928CA;
+      --accent-blue: #0070F3;
+      --accent-cyan: #50E3C2;
+      --card-border: rgba(255, 255, 255, 0.1);
+      --card-hover: rgba(255, 255, 255, 0.05);
+      --transition-timing: 0.2s ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--background);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(121, 40, 202, 0.15), transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(0, 112, 243, 0.15), transparent 30%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .grid-container {
+      max-width: 1400px;
+      margin: 2rem auto;
+      padding: 1rem;
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    @media (min-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(6, minmax(120px, auto));
+      }
+    }
+
+    .grid {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      transition: all var(--transition-timing);
+    }
+
+    .grid::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        var(--accent-purple), 
+        var(--accent-blue), 
+        var(--accent-cyan),
+        transparent
+      );
+      opacity: 0;
+      transition: opacity var(--transition-timing);
+    }
+
+    .grid:hover {
+      transform: translateY(-2px);
+      background: var(--card-hover);
+    }
+
+    .grid:hover::before {
+      opacity: 1;
+    }
+
+    .grid img {
+      max-width: 100%;
+      height: auto;
+      transition: transform var(--transition-timing);
+    }
+
+    .grid:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Grid Areas for Desktop */
+    @media (min-width: 768px) {
+      .grid1 { grid-area: 1 / 1 / 3 / 7; }
+      .grid2 { grid-area: 1 / 7 / 3 / 10; }
+      .grid3 { grid-area: 1 / 10 / 3 / 13; }
+      .grid4 { grid-area: 3 / 1 / 5 / 4; }
+      .grid5 { grid-area: 3 / 4 / 5 / 7; }
+      .grid6 { grid-area: 3 / 7 / 5 / 13; }
+      .grid7 { grid-area: 5 / 1 / 7 / 7; }
+      .grid8 { grid-area: 5 / 7 / 7 / 13; }
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+      background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .yellow {
+      background: linear-gradient(to right, #FFB800, #FFDD00);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+    }
+
+    .stat {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      background: linear-gradient(45deg, var(--accent-purple), var(--accent-blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @media (max-width: 767px) {
+      .grid {
+        min-height: 250px;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --background: #fafafa;
+        --card-bg: rgba(255, 255, 255, 0.9);
+        --text-primary: #000;
+        --text-secondary: rgba(0, 0, 0, 0.7);
+        --card-border: rgba(0, 0, 0, 0.1);
+        --card-hover: rgba(0, 0, 0, 0.02);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="grid-container">
+      <div class="grid grid1">
+        <h1>Social Media <span class="yellow">10x</span> <span class="italic">Faster</span> with AI</h1>
+        <img src="./assets/images/illustration-five-stars.webp" alt="Five stars rating"/>
+        <p>Over 4,000 5-star reviews</p>
+      </div>
+      
+      <div class="grid grid2">
+        <h1>Manage Multiple Platforms</h1>
+        <img src="./assets/images/illustration-multiple-platforms.webp" alt="Multiple platforms illustration"/>
+      </div>
+      
+      <div class="grid grid3">
+        <h1>Consistent Posting Schedule</h1>
+        <img src="./assets/images/illustration-consistent-schedule.webp" alt="Consistent schedule illustration"/>
+      </div>
+      
+      <div class="grid grid4">
+        <h1>Smart Scheduling</h1>
+        <img src="./assets/images/illustration-schedule-posts.webp" alt="Schedule posts illustration"/>
+        <p>Optimize post timings automatically</p>
+      </div>
+      
+      <div class="grid grid5">
+        <h1>Grow Followers</h1>
+        <img src="./assets/images/illustration-grow-followers.webp" alt="Grow followers illustration"/>
+      </div>
+      
+      <div class="grid grid6">
+        <span class="stat">>56%</span>
+        <h1>Faster Audience Growth</h1>
+        <img src="./assets/images/illustration-audience-growth.webp" alt="Audience growth illustration"/>
+      </div>
+      
+      <div class="grid grid7">
+        <h1>Create Content <span class="italic">Quicker</span></h1>
+        <img src="./assets/images/illustration-create-post.webp" alt="Create post illustration"/>
+      </div>
+      
+      <div class="grid grid8">
+        <h1>AI-Powered Content Writing</h1>
+        <img src="./assets/images/illustration-ai-content.webp" alt="AI content illustration"/>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
