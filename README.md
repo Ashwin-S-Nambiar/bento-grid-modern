@@ -134,14 +134,17 @@ We welcome contributions! Here's how you can help:
 
 <div align="center">
 
-### Bento Grid Interface
+### **Bento Grid Interface Light Theme**
+![Light Theme](./screenshots/LightModeScreenshot.png)
+
+### **Bento Grid Interface Dark Theme**
 ![Dark Mode](./screenshots/DesktopScreenshot.png)
 
-### Tablet Bento Grid Interface
+### **Tablet Bento Grid Interface**
 <img src="./screenshots/TabletScreenshot.png" alt="Tablet Screenshot" width="768">
 
-### Mobile Bento Grid Interface
-<img src="./screenshots/MobileScreensot.png" alt="Mobile Screenshot" width="375">
+### **Mobile Bento Grid Interface**
+<img src="./screenshots/MobileScreenshot.png" alt="Mobile Screenshot" width="375">
 
 </div>
 
