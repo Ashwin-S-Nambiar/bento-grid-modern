@@ -4,8 +4,9 @@
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-A modern, responsive Bento Grid layout inspired by Vercel's design aesthetic, featuring smooth animations, dynamic content blocks.
+A modern, responsive Bento Grid layout inspired by Vercel's design aesthetic, featuring smooth animations, dark/light modes and dynamic content blocks.
 
 [Features](#-features) • [Tech Stack](#-tech-stack) • [Design Elements](#-design-elements) • [Installation](#-installation) • [Contributing](#-contributing) • [Screenshots](#-screenshots) • [Live](#-live) • [Author](#-author)
 
@@ -25,6 +26,7 @@ A modern, responsive Bento Grid layout inspired by Vercel's design aesthetic, fe
 ### Core Technologies
 - **HTML5** - Semantic markup structure
 - **CSS3** - Advanced styling and animations
+- **JavaScript:** For theme toggling purposes
 - **Inter Font** - Modern typography
 
 ### CSS Features
