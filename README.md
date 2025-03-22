@@ -6,7 +6,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-A modern, responsive Bento Grid layout inspired by Vercel's design aesthetic, featuring smooth animations, dark/light modes and dynamic content blocks.
+A modern, responsive **Bento Grid** layout inspired by **Vercel**'s design aesthetic, featuring smooth animations, dark/light modes and dynamic content blocks. Currently shows some static content.
 
 [Features](#-features) • [Tech Stack](#-tech-stack) • [Design Elements](#-design-elements) • [Installation](#-installation) • [Contributing](#-contributing) • [Screenshots](#-screenshots) • [Live](#-live) • [Author](#-author)
 
