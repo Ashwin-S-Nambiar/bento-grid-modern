@@ -1,4 +1,4 @@
-# Modern Bento Grid 🎨
+# Modern Bento Grid
 
 <div align="center">
 
@@ -12,16 +12,16 @@ A modern, responsive **Bento Grid** layout inspired by **Vercel**'s design aesth
 
 </div>
 
-## ✨ Features
+## Features
 
-- 🎨 **Modern Bento Grid Layout** - Aesthetic and functional content organization
-- 📱 **Fully Responsive** - Seamless experience across all device sizes
-- ✨ **Smooth Animations** - Subtle hover effects and transitions
-- 🎯 **Optimized Performance** - Fast loading and smooth interactions
-- 🖼️ **Visual Hierarchy** - Clear content organization and emphasis
-- 🌟 **Advanced CSS Effects** - Gradient overlays and backdrop filters
+- **Modern Bento Grid Layout** - Aesthetic and functional content organization
+- **Fully Responsive** - Seamless experience across all device sizes
+- **Smooth Animations** - Subtle hover effects and transitions
+- **Optimized Performance** - Fast loading and smooth interactions
+- **Visual Hierarchy** - Clear content organization and emphasis
+- **Advanced CSS Effects** - Gradient overlays and backdrop filters
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Core Technologies
 - **HTML5** - Semantic markup structure
@@ -38,7 +38,7 @@ A modern, responsive **Bento Grid** layout inspired by **Vercel**'s design aesth
 - Media Queries
 - Clamp() for Responsive Typography
 
-## 🎨 Design Elements
+## Design Elements
 
 1. **Grid System**
    - Responsive 12-column grid
@@ -57,7 +57,7 @@ A modern, responsive **Bento Grid** layout inspired by **Vercel**'s design aesth
    - Gradient text effects
    - Multiple text styles
 
-## 🚀 Installation
+## Installation
 
 1. **Clone the repository**
    ```bash
@@ -82,7 +82,7 @@ A modern, responsive **Bento Grid** layout inspired by **Vercel**'s design aesth
 
 The website will be available at `http://localhost:8000` (or your specified port).
 
-## 🎯 Customization
+## Customization
 
 1. **Colors**
    ```css
@@ -108,7 +108,7 @@ The website will be available at `http://localhost:8000` (or your specified port
    }
    ```
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
@@ -130,7 +130,7 @@ We welcome contributions! Here's how you can help:
    ```
 5. **Open a Pull Request**
 
-## 📸 Screenshots
+## Screenshots
 
 <div align="center">
 
@@ -148,7 +148,7 @@ We welcome contributions! Here's how you can help:
 
 </div>
 
-## 🌍 Live
+## Live
 
 <div align="center">
 
@@ -156,7 +156,7 @@ We welcome contributions! Here's how you can help:
 
 </div>
 
-## 👤 Author
+## Author
 
 ### Ashwin S Nambiar
 - Portfolio: [ashwin.co.in](https://ashwin.co.in)
